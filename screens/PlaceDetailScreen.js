@@ -9,6 +9,12 @@ const PlacesDetailScreen = props => {
   );
 };
 
+PlacesDetailScreen.navigationOptions = navData => {
+  return {
+    headerTitle: navData.navigation.getParam('place').title
+  };
+};
+
 const styles = StyleSheet.create({});
 
 export default PlacesDetailScreen;
