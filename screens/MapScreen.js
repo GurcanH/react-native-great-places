@@ -32,7 +32,7 @@ const MapScreen = props => {
       return;
     }
     props.navigation.navigate('NewPlace', { pickedLocation: selectedLocation });
-  }, []);
+  }, [selectedLocation]);
 
   useEffect(() => {
     props.navigation.setParams({ saveLocation: savePickedLocationHandler });
