@@ -8,9 +8,11 @@ import {
   StyleSheet
 } from 'react-native';
 
-import Colors from '../constants/Colors';
 import * as Location from 'expo-location';
 import * as Permissions from 'expo-permissions';
+
+import Colors from '../constants/Colors';
+import MapPreview from './MapPreview';
 
 const LocationPicker = props => {
   const [isFetching, setIsFetching] = useState(false);
@@ -56,13 +58,13 @@ const LocationPicker = props => {
 
   return (
     <View style={styles.LocationPicker}>
-      <View style={styles.mapPreview}>
+      <MapPreview style={styles.mapPreview} location={pickedLocation}>
         {isFetching ? (
           <ActivityIndicator size='large' color={Colors.primary} />
         ) : (
           <Text> No location chosen yet!</Text>
         )}
-      </View>
+      </MapPreview>
       <Button
         title='Get User Location'
         color={Colors.primary}
